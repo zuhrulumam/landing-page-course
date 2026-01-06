@@ -17,14 +17,27 @@ export function WaitlistForm() {
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulate API call - replace with actual endpoint when ready
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email })
+      })
 
-    console.log("Waitlist signup:", { name, email })
+      if (!res.ok) {
+        throw new Error("Failed to join waitlist")
+      }
 
-    setIsSubmitted(true)
-    setIsLoading(false)
+      setIsSubmitted(true)
+    } catch (error) {
+      alert("Something went wrong. Please try again.")
+    } finally {
+      setIsLoading(false)
+    }
   }
+
 
   if (isSubmitted) {
     return (
