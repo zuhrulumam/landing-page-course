@@ -25,7 +25,7 @@ export async function POST(req: Request) {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "X-API-Key": `Bearer ${process.env.LISTMONK_API_KEY}`
+                    "Authorization": `token ${process.env.LISTMONK_USERNAME}:${process.env.LISTMONK_API_KEY}`
                 },
                 body: JSON.stringify(payload)
             }
