@@ -14,7 +14,7 @@ export default function Home() {
               <span className="text-muted-foreground">Course launching soon</span>
             </div>
             <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-              Master Dokploy Deployment
+              Master Dokploy Deployment Update
             </h1>
             <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl">
               Learn to deploy and manage applications with confidence. A comprehensive course covering everything from
